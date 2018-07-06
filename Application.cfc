@@ -29,7 +29,7 @@ component persistent="false" accessors="true" output="false" extends="includes.f
 		include this.muraAppConfigPath & 'appcfc/applicationSettings.cfm';
 	} else {
 		// Pre 7.1
-		this.muraAppConfigPath = local.includeroot & 'config';
+		this.muraAppConfigPath = local.includeroot & 'config/';
 		include local.includeroot & 'config/applicationSettings.cfm';
 
 		try {

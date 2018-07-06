@@ -14,7 +14,7 @@
 		<cfset qFeedList = "" />
 
 		<cfquery name="qFeedList" datasource="#$.GlobalConfig().get('datasource')#" username="#$.GlobalConfig().get('dbusername')#" password="#$.GlobalConfig().get('dbpassword')#">
-			SELECT * from tcontentfeeds
+			SELECT * from tcontentfeeds WHERE siteID = <cfqueryparam value="#siteID#" cfsqltype="cf_sql_varchar" maxlength="25">
 		</cfquery>
 
 		<cfreturn qFeedList />
@@ -29,7 +29,8 @@
 		<cfset var pluginConfig = arguments.$.getPlugin("MuraGoogleSitemaps") />
 		<cfset var timeOfDay			= createDateTime(2011,1,1,3,0,0) />
 
-		<cfset var processURL		= "http://#arguments.$.siteConfig('domain')##arguments.$.globalConfig().getServerPort()##arguments.$.globalConfig('context')#/plugins/#pluginConfig.getDirectory()#/?gsm=process:&site=#siteID#" />
+		<cfset var siteProtocol = $.getBean('settingsManager').getSite(arguments.siteID).getUseSSL() ? 'https://' : 'http://'>
+		<cfset var processURL = "#siteProtocol##arguments.$.siteConfig('domain')##arguments.$.globalConfig().getServerPort()##arguments.$.globalConfig('context')#/plugins/#pluginConfig.getDirectory()#/?gsm=process:&site=#siteID#" />
 
 		<cfif arguments.enable>
 			<cfschedule
@@ -150,6 +151,8 @@
 				tcontent.approved = 1
 			AND
 				tcontent.active = 1
+			AND
+				tcontent.isNav = 1
 			AND
 				(
 				tcontent.display = 1

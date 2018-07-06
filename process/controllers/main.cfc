@@ -31,11 +31,11 @@ component persistent="false" accessors="true" output="false" extends="controller
 
 		if(rc.gsmsettings.getValue('location') eq "web") {
 			filename = "#expandPath(application.configBean.getContext() & '/')#sitemap.xml";
-			rc.fileURL	= "http://#siteConfig.getDomain()##rc.$.globalConfig().getServerPort()##rc.$.globalConfig().getContext()#/sitemap.xml";
+			rc.fileURL	= "#$.siteConfig().getWebPath(complete=1)#/sitemap.xml";
 		}
 		else {
-			filename ="#expandPath(application.configBean.getContext() & '/')##siteid#/sitemap.xml";
-			rc.fileURL	= "http://#siteConfig.getDomain()##rc.$.globalConfig().getServerPort()##rc.$.globalConfig().getContext()#/#siteid#/sitemap.xml";
+			filename ="#application.configBean.getSiteDir()#/#siteid#/sitemap.xml";
+			rc.fileURL	= "#$.siteConfig().getWebPath(complete=1)##application.configBean.getSiteAssetPath()#/#siteid#/sitemap.xml";
 		}
 		try {
 			fileWrite(filename,sitemapXML);
@@ -46,7 +46,7 @@ component persistent="false" accessors="true" output="false" extends="controller
 				filename = expandPath("../../sitemap.xml");
 			}
 			else {
-				filename = expandPath("../../#siteid#/sitemap.xml");
+				filename = expandPath("../..#application.configBean.getSiteAssetPath()#/#siteid#/sitemap.xml");
 			}
 			fileWrite(filename,sitemapXML);
 		}

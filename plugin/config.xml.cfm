@@ -61,7 +61,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 						label="Priority"
 						hint="The relative importance of the page to the site"
 						type="SelectBox"
-						defaultValue="0.1"
+						defaultValue="0.5"
 						required="false"
 						validation=""
 						regex=""
