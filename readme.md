@@ -36,9 +36,11 @@ The Mura Sitemaps plugin uses your cfml engine's scheduler to automatically gene
 
 You can also manually generate the sitemap at any time by clicking on the Generate tab and then the Generate button at the bottom of the page.
 
+<!--
 ## News
 
 You can also generate news sitemaps. If your site generates news compatible with Google's guidelines, you can enable this feature under the News tab. Set Enabled to turn this feature on, and then select an existing Content Collection that will act as a source for the news sitemap. Note that as per the Google news sitemap regulations, the sitemap will only contain items published within the last two days. Also, this sitemap is generate on a daily schedule as well as every time you click on the manual Generate button (see above).
+-->
 
 ## Translations
 

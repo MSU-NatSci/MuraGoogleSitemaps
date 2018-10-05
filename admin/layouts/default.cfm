@@ -62,9 +62,11 @@ http://www.apache.org/licenses/LICENSE-2.0
 					<li<cfif rc.action eq 'admin:generate.default'> class="active"</cfif>>
 						<a href="#buildURL(action='admin:generate', path='./')#">Generate</a>
 					</li>
+					<!--
 					<li<cfif rc.action eq 'admin:news.default'> class="active"</cfif>>
 						<a href="#buildURL(action='admin:news', path='./')#">News</a>
 					</li>
+					-->
 					<cfif rc.hasTranslationManager>
 						<li<cfif rc.action eq 'admin:translations.default'> class="active"</cfif>>
 							<a href="#buildURL(action='admin:translations', path='./')#">Translations</a>
