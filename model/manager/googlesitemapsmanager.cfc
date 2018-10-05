@@ -154,6 +154,8 @@
 			AND
 				tcontent.isNav = 1
 			AND
+				tcontent.searchExclude = 0
+			AND
 				(
 				tcontent.display = 1
 				OR

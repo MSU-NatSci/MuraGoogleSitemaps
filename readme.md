@@ -26,7 +26,7 @@ The first thing you should do once the plugin is installed is update the setting
 
 By default, the Mura Google Sitemap plugin will include all pages in your website. You can customize this on a per-page or per-section basis by clicking on the Extended Attributes tab in the content editor, and adjusting the Google Sitemaps settings:
 
-- Exclude From Sitemap: by default all pages are included. Select "No" to exclude the page, "Yes" to include the page, and "Inherit" to inherit whatever the parent page's settings are.
+- Exclude From Sitemap: by default all pages are included. Select "Yes" to exclude the page, "No" to include the page, and "Inherit" to inherit whatever the parent page's settings are.
 - Change Frequency: this tells Google how often it should re-index the page.
 - Priority: This is the priority weight you would like placed on the page. For instance, your homepage should be a 1.0, your contact us page should be similarly high, with the rest of the site weighted accordingly (note that it is questionable how valuable this weighting system is in regards to your site, so I wouldn't lose too much sleep over it).
 
