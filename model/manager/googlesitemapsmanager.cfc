@@ -124,7 +124,7 @@
 				ON
 					tclassextend.siteID = <cfqueryparam value="#useSiteID#" cfsqltype="cf_sql_varchar" maxlength="25">
 				AND
-					tcontent.type IN ('Page','File','Folder','Portal','Calendar','Gallery','Link')
+					tcontent.type IN ('Page','File','Folder','Portal','Calendar','Gallery')
 				AND
 					tclassextend.subtype = 'Default'
 			JOIN
