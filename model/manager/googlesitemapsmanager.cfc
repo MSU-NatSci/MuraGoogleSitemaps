@@ -198,10 +198,12 @@
 				<cfset sValues = getValues( qAtts,isExempt,valueHash ) />
 			</cfif>
 
-			<cfif not StructKeyExists( sValues,'priority' )>
+			<cfif (not StructKeyExists( sValues,'priority' )) or sValues.priority eq ''>
 				<cfset sValues.priority = "0.5" />
 			</cfif>
-			<cfif not StructKeyExists( sValues,'changefrequency' )>
+			<cfif (not StructKeyExists( sValues,'changefrequency' )) or
+					(not ListContains('always,hourly,daily,weekly,monthly,yearly,never',
+						sValues.changefrequency))>
 				<cfset sValues.changefrequency = "monthly" />
 			</cfif>
 
