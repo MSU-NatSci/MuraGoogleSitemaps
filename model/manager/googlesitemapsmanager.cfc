@@ -167,6 +167,12 @@
 						<cfelse>
 							tcontent.displaystart <= #CreateODBCDateTime( now() )#
 						</cfif>
+						AND
+						<cfif application.configBean.getDbType() eq "mysql">
+							tcontent.displaystop >= CURDATE()
+						<cfelse>
+							tcontent.displaystop >= #CreateODBCDateTime( now() )#
+						</cfif>
 					)
 				)
 		</cfquery>
